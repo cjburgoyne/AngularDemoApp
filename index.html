@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>Hello World</title>
 
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+	<!-- Library Scripts -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/d3/d3.min.js"></script>
+
+	<!-- Application Script -->
+	<script src="app/app.js"></script>
+
+	<!-- Controllers -->
+	<script src="app/mainController.js"></script>
 </head>
 
-<body>
-	<h1 ng-controller="HelloWorldCtrl">{{helloMessage}}</h1>
-	<script type="text/javascript">
-		function HelloWorldCtrl($scope) {
-			$scope.helloMessage = "Hello World!";
-		}
-	</script>
+<body ng-app="myApp">
+	<div ng-controller="MainController as vm">
+		<p>{{vm.helloMessage}}</p>
+	</div>
 </body>
 </html>
